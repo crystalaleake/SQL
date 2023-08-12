@@ -1,0 +1,27 @@
+--Create a cloting store database
+
+CREATE TABLE products (id integer primary key, name text, quantity integer, price integer, rating integer);
+
+INSERT INTO products VALUES (1, 'shirts', 20, 9.99, 5);
+INSERT INTO products VALUES (2, 'jeans', 20, 12.99, 5);
+INSERT INTO products VALUES (3, 'tank tops', 10, 5.99, 5);
+INSERT INTO products VALUES (4, 't-shirts', 25, 9.99, 5);
+INSERT INTO products VALUES (5, 'hoodies', 6, 19.99, 5);
+INSERT INTO products VALUES (6, 'jacket', 6, 14.99, 5);
+INSERT INTO products VALUES (7, 'socks', 8, 4.99, 5);
+INSERT INTO products VALUES (8, 'undies', 24, 4.99, 5);
+INSERT INTO products VALUES (9, 'bras', 24, 19.99, 5);
+INSERT INTO products VALUES (10, 'lingerie', 12, 19.99, 5);
+INSERT INTO products VALUES (11, 'sweaters', 12, 15.99, 5);
+INSERT INTO products VALUES (12, 'skirts', 12, 12.99, 5);
+INSERT INTO products VALUES (13, 'hair clips', 6, 3.99, 5);
+INSERT INTO products VALUES (14, 'sun glasses', 10, 9.99, 5);
+INSERT INTO products VALUES (15, 'earrings', 6, 6.99, 5);
+
+--Display the database with all products $9.99 and above.
+SELECT * FROM products;
+
+--Display the products as lowest to highest price.
+SELECT * FROM products
+WHERE price >9.99
+ORDER BY price asc;
