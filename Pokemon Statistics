@@ -815,19 +815,27 @@ INSERT INTO pokemon(Number,Name,Type_1,Type_2,Total,HP,Attack,Defense,Sp_Atk,Sp_
 INSERT INTO pokemon(Number,Name,Type_1,Type_2,Total,HP,Attack,Defense,Sp_Atk,Sp_Def,Speed,Generation,Legendary) VALUES (720,'HoopaHoopa Unbound','Psychic','Dark',680,80,160,60,170,130,80,6,'True');
 INSERT INTO pokemon(Number,Name,Type_1,Type_2,Total,HP,Attack,Defense,Sp_Atk,Sp_Def,Speed,Generation,Legendary) VALUES (721,'Volcanion','Fire','Water',600,80,110,120,130,90,70,6,'True');
 
-
-
 SELECT * FROM pokemon WHERE HP> 100;
+
+--Sum of all attacks by pokemon type.
 
 SELECT type_1, SUM(Attack) AS sum_attack FROM pokemon GROUP BY type_1 ORDER BY sum_attack desc;
 
+--Average attack by pokemon type.
+
 SELECT type_1, AVG(Attack) AS avg_attack FROM pokemon GROUP BY type_1 ORDER BY avg_attack desc;
 
+--Max attack by pokemon type.
+
 SELECT type_1,MAX(Attack) AS max_attack FROM pokemon GROUP BY type_1 ORDER BY max_attack desc;
+
+--Average pokemon attack.
 
 SELECT AVG(Attack) as avg_attack FROM pokemon;
 
 SELECT name,hp,attack FROM pokemon;
+
+--Reflecting how many pokemon have below average, average or above average attacks. 
 
 SELECT COUNT(*),
 CASE
@@ -837,7 +845,13 @@ ELSE "avg"
 END as "avg_attack" FROM pokemon
 GROUP BY "avg_attack";
 
+--Showing average HP of pokemon.
 
+SELECT AVG(HP) as avg_hp FROM pokemon;
+
+--Showing all pokemon with an above average HP and attack. 
+
+SELECT name,hp,attack FROM Pokemon WHERE HP > 69 AND attack > 79;
 
 
 
