@@ -41,11 +41,13 @@ INSERT INTO books VALUES (21,"The Kite Runner",10,2003);
 
 SELECT * FROM books;
 
+-- Display all books and the author's name.
 SELECT a.name,b.name
 FROM authors a
 JOIN books b
 ON a.id=b.author;
 
+--Display a specific author and the books they've written.
 SELECT a.name,b.name
 FROM authors a
 JOIN books b
