@@ -1,0 +1,56 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE authors(id INTEGER PRIMARY KEY, name TEXT, DOB INTEGER, Died INTEGER);
+
+INSERT INTO authors VALUES (1, "Harper Lee","4/28/1926", "2/19/2016");
+INSERT INTO authors VALUES (2, "Stephen King","9/21/1947",NULL);
+INSERT INTO authors VALUES (3, "Ray Bradbury","8/22/1920","6/5/2012");
+INSERT INTO authors VALUES (4, "J. K. Rowling","7/31/1965",NULL);
+INSERT INTO authors VALUES (5, "Madeleine L'Engle","11/29/1918","9/6/2007");
+INSERT INTO authors VALUES (6, "F. Scott Fitzgerald","9/24/1896","12/21/1940");
+INSERT INTO authors VALUES (7, "Mary Shelley","8/30/1797","2/1/1851");
+INSERT INTO authors VALUES (8, "Mark Twain","11/30/1835","4/21/1910");
+INSERT INTO authors VALUES (9, "Jane Austen","12/16/1775","7/18/1817");
+INSERT INTO authors VALUES (10, "Khaled Hosseini","1965",NULL);
+
+SELECT * FROM authors;
+
+Create Table books(id INTEGER, name TEXT, author TEXT, Year_published INTEGER);
+
+INSERT INTO books VALUES (1, "To Kill a Mocking Bird",1,1960);
+INSERT INTO books VALUES (2, "It",2,1986);
+INSERT INTO books VALUES (3, "The Shining", 2, 1997);
+INSERT INTO books VALUES (4, "The Green Mile",2,1996);
+INSERT INTO books VALUES (5,"Pet Semetary",2,1983);
+INSERT INTO books VALUES (6,"Fahrenheit 451",3,1953);
+INSERT INTO books VALUES (7,"Harry Potter and the Sorcerer's Stone",4,1997);
+INSERT INTO books VALUES (8,"Harry Potter and the Chamber of Secrets",4,1998);
+INSERT INTO books VALUES (9,"Harry Potter and the Prizoner of Azkaban",4,1999);
+INSERT INTO books VALUES (10,"Harry Potter and the Goblet of Fire",4,2000);
+INSERT INTO books VALUES (11,"Harry Potter and the Order of the Phoenix",4,2003);
+INSERT INTO books VALUES (12,"Harry Potter and the Half-Blood Prince",4,2005);
+INSERT INTO books VALUES (13,"Harry Potter and the Deathly Hollows",4,2007);
+INSERT INTO books VALUES (14,"A Wrinkle in Time",5,1962);
+INSERT INTO books VALUES (15,"The Great Gatsby",6,1925);
+INSERT INTO books VALUES (16,"Frankenstein",7,1818);
+INSERT INTO books VALUES (17,"Adventures of Huckleberry Finn",8,1884);
+INSERT INTO books VALUES (28,"The Adventures of Tom Sawyer",8,1876);
+INSERT INTO books VALUES (19,"Pride and Prejudice",9,1813);
+INSERT INTO books VALUES (20,"Sense and Sensibility",9,1811);
+INSERT INTO books VALUES (21,"The Kite Runner",10,2003);
+
+SELECT * FROM books;
+
+SELECT a.name,b.name
+FROM authors a
+JOIN books b
+ON a.id=b.author;
+
+SELECT a.name,b.name
+FROM authors a
+JOIN books b
+ON a.id=b.author
+WHERE b.author=2;
+
+
+
